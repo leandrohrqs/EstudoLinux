@@ -324,3 +324,139 @@ após isso utilizar o `cd -` você estará no diretório `/` porém se utilizar 
 ## Comando `which`
 
 - É possível ver de onde um comando sai utilizando: `which <nome-comando>`
+
+## Editores de texto
+
+### Nano
+
+- Para **criar** um arquivo: Abra digitando `nano`
+
+- Para **salvar** um arquivo: Aperte as teclas **ctrl + O**
+
+- Para sair de um arquivo: Aperte as teclas **ctrl + X**
+
+- Para **editar** um arquivo: Digite `nano <nome-do-arquivo>`
+
+- Para **copiar** o conteúdo de um arquivo devemos apertar **ctrl + R** e digitar o nome do arquivo desejado
+
+### Copiando, colando, recortando
+
+- Para iniciar devemos apertar **alt + A**, com a setinha selecionamos o conteúdo desejado e apertamos **alt + 6** para **copiar**
+
+- Para colar devemos apertar: **ctrl + U**
+
+- Para recortar devemos apertar **ctrl + K**
+
+### Atalhos
+
+- Para ir ao final do documento: **alt + /**
+
+- Para ir ao inicio do documento: **alt + \\**
+
+- Para ir a uma linha específica: **alt + G** e digite qual linha deseja ir
+
+- Para buscar alguma palava: **ctrl + W**
+
+- Para substituir: **alt + R**, digite a palavra desejada e depois a que deseja substituir
+
+## VIM
+
+- Para criar ou editar um arquivo: `vim <nome-do-arquivo>`
+
+- Para entrar no modo inserção aperte a tecla **I**
+
+- Para salvar um arquivo fique no modo de comandos e digite `:x`
+
+- Para salvar um arquivo sem sair fique no modo de comandos e digite `:w`
+
+- Para sair do editor digite no modo de comandos `:q`
+
+- Caso deseje deletar uma linha sem entrar no modo edição aperte a tecla **D** duas vezes ou aperte uma e aperte setinha pra baixo ou pra cima
+
+- Caso deseja dar um "ctrl + z" basta apertar **U**
+
+- Caso deseje deixar o arquivo quando abriu, aperte **ctrl + R** que ele irá desfazer todas as mudanças
+
+- Para buscar uma palavra no vim aperte: **/** e digite a palavra desejada
+
+  - Apertando **N** ele avança a busca
+  - Apertando **shift + N** ele volta a busca
+
+
+- Para dar replace em todas as palavras, entre no modo de comandos e digite `:%s/palavra-original/palavra-substituta/g`
+
+- Para dar replace em apenas a linha que está, entre no modo de comandos e digite `:s/palavra-original/palavra-substituta/g`
+
+- Saindo sem salvar arquivo: digite `:q!`
+
+## Adicionando usuários no Linux
+
+- Para criar o usuário digitamos: `sudo adduser <nome-usuario>`
+
+## Deletando usuários no Linux
+
+- Para deletar um usuário: `sudo userdel --remove <nome-usuario>`
+
+## Mudando o nome de display de usuário
+
+- Digite: `sudo usermod -c 'novo-nome' nome-usuario`
+
+## Mudando nome base do usuário
+
+- Digite: `sudo usermod -l nome-usuario -d /home/nome-usuario -m novo-nome`
+
+## Bloqueando e desbloqueando usuários
+
+- Bloquear: `sudo usermod -L nome-usuario`
+
+- Desbloquear: `sudo usermod -U nome-usuario`
+
+## Grupos no Linux
+
+É um grupo de usuários com permissões pré-definidas para facilitar a gestão
+
+## Criando um grupo no Linux
+
+- Visualizar grupos criados: `getent group`
+
+- Criar um grupo: `sudo groupadd -g <id-unico> <nome-grupo>`
+
+## Deletando um grupo no Linux
+
+- Deletar um grupo: `sudo groupdel <nome-grupo>`
+
+## Movendo um usuário de grupo
+
+- Para mover de grupo: `sudo usermod -a -G <nome-do-grupo> <nome-usuario>`
+
+- Remover de um grupo: `sudo gpasswd -d <nome-usuario> <nome-do-grupo>`
+
+## Como virar um super usuário
+
+- Digite: `sudo su`
+
+## Trocar a senha atual do usuário atual
+
+- Digite: `passwd` e siga as instruções
+
+## Permissões do Linux
+
+- **(R - read)**: Se os usuários poderão ler o arquivo
+
+- **(W - write)**: Se os usuários poderão escrever no arquivo
+
+- **(X - execute)**: Se os usuários poderão executar o arquivo
+
+### Entendendo as permissões
+
+- 1 222 333 444
+
+  - **1**: Diretório ou arquivo  
+
+  - **222**: Permissões do owner (dono) 
+  
+  - **333**: Permissões do grupo (que o arquivo pertence)
+  
+  - **444**: Permissões dos demais usuários (que não são donos do arquivo e também não fazem parte do grupo do arquivo)
+
+    <img src="img/linux-perm-ex.png" height="80%">
