@@ -239,5 +239,88 @@ após isso utilizar o `cd -` você estará no diretório `/` porém se utilizar 
 
 - Mostra em qual diretório está
 
-## Atualizando repositórios
+## Atualizando e instalando repositórios
 
+- Para atualizar os repositórios devemos utilizar o `sudo apt-get update`
+
+- Para atualizar os pacotes devemos utilizar o `sudo apt-get upgrade`
+
+- Para instalar pacotes/aplicativos devemos utilizar: `sudo apt-get install <nome-app/pacote>`
+
+- Para remover apps/pacotes utilize: `sudo apt-get purge <nome-app/pacote>`
+
+## Atualizando o Linux
+
+- Para atualizar o Linux devemos utilizar o: `sudo apt-get dist-upgrade`
+
+- Atualizar o Linux pode gerar problemas, pois ele pode remover pacotes que não são do Linux para concluir esta operação
+
+## Limpando pacotes/apps desnecessários
+
+- Utilize o comando: `sudo apt-get autoremove`
+
+## Buscando pacotes/aplicativos
+
+- Utilize o comando: `apt-cache search <nome>`
+
+## Dica **apt-get**
+
+- O apt-get foi resumido para apenas `apt`, qualquer comando que utilize `apt-get` pode utilizar apenas o `apt`: `sudo apt update`
+
+## Comando `head`
+
+- Serve para ver o topo de um arquivo, exemplo:
+`head documento.txt` "documento.txt" é um arquivo de 50 parágrafos, com o `head documento.txt` ele mostra apenas o topo do documento
+
+- Com ele também é possível pedir um número x de linhas: `head -n <num-de-linhas documento.txt>`
+
+- É possível acrescentar no final do comando se você deseja colocar a parte do texto em um outro arquivo: `head -n 10 documento.txt > resumo-head-doc.txt`
+
+## Comando `tail`
+
+- O `tail` funciona da mesma maneira que o `head`, porém ele mostra o fim do arquivo
+
+- Sintaxe completa: `tail -n 10 documento.txt > resumo-tail-doc.txt`
+
+- O comando `tail -f <nome-arq>` é utilizado para fazer debug de logs
+
+## Comando `grep`
+
+- Ele procura uma palavra desejada em um arquivo, por exemplo:
+
+  No "documento.txt" existe a palavra "Lorem"
+  
+  Utilizando o comando: `grep 'Lorem' documento.txt` ele vai mostrar aonde tem a palavra e dar um **highlight** nela.
+  <img src="img/linux-grep-ex.png" width="80%">
+
+  **Atenção** o comando `grep` é Case Sensitive, ou seja, palavras com inicial em maiúsculo fazem diferença. Porém podemos utilizar a flag `-i` para perder esta característica: `grep -i`
+
+- `grep -c`: Fala quantas vezes ele achou a palavra que procuramos.
+
+- `grep 'Lorem' -r`: Irá procurar em todos os arquivos a palavra desejada
+
+## Comando `find`
+
+- `find -name 'documento.txt'`: procura todos os arquivos com o nome selecionado
+
+  **Atenção** o comando `find` é Case Sensitive, ou seja, palavras com inicial em maiúsculo fazem diferença. Porém podemos utilizar a flag `-iname` para perder esta característica: `find -iname`
+
+- `find -empty`: Procura arquivos e diretórios vazios
+
+  É possível separar por diretórios e arquivos:
+
+  "d" = diretório> `find -empty -type d`
+  
+  "f" = arquivo: `find -empty -type f`
+
+## Comando `locate`
+
+- O comando busca arquivos/diretórios em uma base de dados local, pode ocorrer de arquivos muito novos não serem encontrados
+
+- Sintaxe: `locate <nome-arquivo>`
+
+- É possível ver como está a base de dados utilizando: `locate -s`
+
+## Comando `which`
+
+- É possível ver de onde um comando sai utilizando: `which <nome-comando>`
