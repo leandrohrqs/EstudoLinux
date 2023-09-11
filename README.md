@@ -460,3 +460,34 @@ após isso utilizar o `cd -` você estará no diretório `/` porém se utilizar 
   - **444**: Permissões dos demais usuários (que não são donos do arquivo e também não fazem parte do grupo do arquivo)
 
     <img src="img/linux-perm-ex.png" height="80%">
+
+## Alterando as permissões
+
+  <img src="img/linux-perm-num.png" height="80%">
+  
+  <img src="img/linux-perm-sim.png" height="80%">
+  <img src="img/linux-ex-sim.png" height="80%">
+
+## Alterando o owner do arquivo
+
+- Para alterar o owner do arquivo deveremos utilizar o: **`chown nome-user nome-arquivo`**
+
+## Alterando o grupo do arquivo
+
+- Para alterar o grupo do arquivo deveremos utilizar o: **`chgrp nome-grupo nome-arquivo`**
+
+## Compactar e descompactar arquivos
+
+- Compactar: `tar -czvf nome-arq-compactado.tar.gz arq-a-compactar`
+
+- Descompactar: `tar -xzvf nome-arq-compactado.tar.gz`
+
+### Compactação em zip
+
+- Compactar: `zip -r nome-arq.zip nome-arq-a-compactar`
+
+- Descompactar: `unzip nome-arq.zip -d nome-diretorio`
+
+### Visualizar dentro do arquivo compactado
+
+- `tar -tvf nome-arq`
